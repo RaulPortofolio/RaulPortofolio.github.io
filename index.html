@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * { font-family: monospace; }
+        * { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
     </style>
 </head>
 <body>
@@ -26,7 +26,7 @@
               youtubeId: '1xYzZ4vWkyg'
             },
             {
-              title: 'Roleplay Simulator',
+              title: 'Battlegrounds Combat System',
               description: 'Open-world roleplay experience with custom jobs, housing system, and economy.',
               youtubeId: 'dQw4w9WgXcQ'
             },
@@ -43,24 +43,24 @@
           ];
 
           return (
-            <div className="min-h-screen bg-gray-50 p-6">
+            <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
               
               {/* Header */}
-              <header className="border-4 border-black p-8 mb-8 max-w-4xl mx-auto" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%)' }}>
-                <h1 className="text-5xl font-bold mb-2">Scripter</h1>
-                <p className="text-xl text-gray-700">3 years of experience</p>
+              <header className="rounded-2xl shadow-lg p-8 mb-8 max-w-4xl mx-auto" style={{ background: 'linear-gradient(135deg, #3b82f6 0%, #1e40af 100%)' }}>
+                <h1 className="text-5xl font-bold mb-2 text-white">Scripter</h1>
+                <p className="text-xl text-blue-100">3 years of experience</p>
               </header>
 
               {/* Contact */}
-              <div className="max-w-4xl mx-auto border-4 border-black bg-white p-8 mb-8">
-                <h3 className="text-2xl font-bold mb-4">CONTACT</h3>
+              <div className="max-w-4xl mx-auto rounded-2xl shadow-lg bg-white p-8 mb-8">
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">CONTACT</h3>
                 <a 
                   href="https://discord.com/users/raulmobile123"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-4 border-black px-5 py-3 text-lg font-bold cursor-pointer"
-                  style={{ display: 'inline-block', transition: 'transform 0.2s', background: 'linear-gradient(135deg, #fde047 0%, #fcd34d 100%)' }}
-                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                  className="rounded-lg px-6 py-3 text-lg font-semibold cursor-pointer shadow-md hover:shadow-lg text-white"
+                  style={{ display: 'inline-block', transition: 'all 0.2s', background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)' }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                 >
                   Discord: raulmobile123
@@ -72,14 +72,14 @@
                 {projects.map((project, index) => (
                   <div 
                     key={index}
-                    className="border-4 border-black bg-white overflow-hidden"
+                    className="rounded-2xl shadow-lg bg-white overflow-hidden hover:shadow-xl transition-shadow"
                     style={{ 
                       marginLeft: index % 2 === 0 ? '0' : '40px',
                       marginRight: index % 2 === 0 ? '40px' : '0'
                     }}
                   >
                     {/* Video */}
-                    <div className="border-b-4 border-black aspect-video w-full bg-gray-900">
+                    <div className="aspect-video w-full bg-gray-900">
                       <iframe
                         width="100%"
                         height="100%"
@@ -93,23 +93,23 @@
                     
                     {/* Info */}
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                      <p className="text-gray-700 leading-relaxed">{project.description}</p>
+                      <h3 className="text-2xl font-bold mb-3 text-gray-800">{project.title}</h3>
+                      <p className="text-gray-600 leading-relaxed">{project.description}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Skills */}
-              <div className="max-w-4xl mx-auto border-4 border-black p-8 mb-8" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f9fafb 100%)' }}>
-                <h3 className="text-2xl font-bold mb-6">SKILLS</h3>
+              <div className="max-w-4xl mx-auto rounded-2xl shadow-lg p-8 mb-8" style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%)' }}>
+                <h3 className="text-2xl font-bold mb-6 text-gray-800">SKILLS</h3>
                 <div className="flex flex-wrap gap-3">
                   {['I can do anything, from', 'DataStores', 'Gun Systems', 'Inventory Systems', 'RPG Systems', 'Full Games', 'Quest Systems', 'Advanced NPCs', 'Boss Systems'].map((skill, index) => (
                     <span 
                       key={index}
-                      className="border-4 border-black bg-gray-100 px-4 py-2 text-sm font-bold cursor-pointer"
-                      style={{ display: 'inline-block', transition: 'transform 0.2s' }}
-                      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+                      className="rounded-lg bg-blue-100 px-4 py-2 text-sm font-semibold cursor-pointer text-blue-800 hover:bg-blue-200"
+                      style={{ display: 'inline-block', transition: 'all 0.2s' }}
+                      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                       onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                     >
                       {skill}
@@ -119,7 +119,7 @@
               </div>
 
               {/* Footer */}
-              <footer className="max-w-4xl mx-auto mt-12 pt-6 border-t-4 border-black">
+              <footer className="max-w-4xl mx-auto mt-12 pt-6">
               </footer>
 
             </div>
@@ -131,7 +131,3 @@
     </script>
 </body>
 </html>
-
-
-
-
