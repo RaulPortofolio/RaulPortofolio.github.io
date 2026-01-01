@@ -3,182 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raul Portofolio</title>
+    <title>Raul Portfolio</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗿</text></svg>">
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        * { 
+        * {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
+
         body {
-            background: linear-gradient(135deg, #020617 0%, #0f172a 25%, #1e293b 50%, #0f172a 75%, #020617 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+            background: linear-gradient(
+                135deg,
+                #020617 0%,
+                #160a0a 40%,
+                #2a0f0f 50%,
+                #160a0a 60%,
+                #020617 100%
+            );
+            background-size: 300% 300%;
+            animation: gradientShift 18s ease infinite;
         }
+
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-        h1, h2, h3, h4, h5, h6, p, span, a {
-            -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.4);
+
+        h1, h2, h3, p, span {
+            -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.4);
         }
     </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        const { useState } = React;
+<div id="root"></div>
 
-        function RobloxPortfolio() {
-          const [showTooltip, setShowTooltip] = useState(false);
-          const [tooltipText, setTooltipText] = useState('Click to copy');
+<script type="text/babel">
+const { useState } = React;
 
-          const copyDiscord = () => {
-            navigator.clipboard.writeText('raulmobile123');
-            setTooltipText('Copied!');
-            setTimeout(() => {
-              setTooltipText('Click to copy');
-            }, 2000);
-          };
+function RobloxPortfolio() {
+    const [showTooltip, setShowTooltip] = useState(false);
+    const [tooltipText, setTooltipText] = useState('Click to copy');
 
-          const projects = [
-            {
-              title: 'Parkour System',
-              description: 'Parkour movement system with mechanics such as wall running, dashing, and vaulting.',
-              youtubeId: '1xYzZ4vWkyg'
-            },
-            {
-              title: 'Battlegrounds System',
-              description: 'Battlegrounds system with M1 combos, abilities, counters, blocking and different characters.',
-              youtubeId: 'OiZC_5G4N2Q'
-            },
-            {
-              title: 'Gun System',
-              description: 'Raycast gun system with killstreaks and ammo stations.',
-              youtubeId: '_hSuTYw2sKo'
-            }
-          ];
+    const copyDiscord = () => {
+        navigator.clipboard.writeText('raulmobile123');
+        setTooltipText('Copied!');
+        setTimeout(() => setTooltipText('Click to copy'), 2000);
+    };
 
-          return (
-            <div className="min-h-screen p-6">
-              
-              {/* Header */}
-              <header className="rounded-2xl shadow-2xl p-8 mb-8 max-w-4xl mx-auto border-2 border-red-900/40" style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #dc2626 100%)' }}>
-                <h1 className="text-5xl font-bold mb-2 text-red-100 drop-shadow-lg">Scripter</h1>
-                <p className="text-xl text-red-200/80">3 years of experience</p>
-              </header>
-
-              {/* Contact */}
-              <div className="max-w-4xl mx-auto rounded-2xl shadow-2xl p-8 mb-8 border-2 border-slate-700/30" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)' }}>
-                <h3 className="text-2xl font-bold mb-4 text-red-400">CONTACT</h3>
-                <div style={{ position: 'relative', display: 'inline-block' }}>
-                  <button
-                    onClick={copyDiscord}
-                    onMouseEnter={() => setShowTooltip(true)}
-                    onMouseLeave={() => setShowTooltip(false)}
-                    className="rounded-lg px-6 py-3 text-lg font-semibold cursor-pointer shadow-lg hover:shadow-red-500/50 text-red-100 border-2 border-red-700/50"
-                    style={{ display: 'inline-block', transition: 'all 0.3s', background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #dc2626 100%)' }}
-                    onMouseEnter={(e) => {
-                      setShowTooltip(true);
-                      e.currentTarget.style.transform = 'scale(1.05)';
-                      e.currentTarget.style.boxShadow = '0 0 20px rgba(220, 38, 38, 0.6)';
-                    }}
-                    onMouseLeave={(e) => {
-                      setShowTooltip(false);
-                      e.currentTarget.style.transform = 'scale(1)';
-                      e.currentTarget.style.boxShadow = '';
-                    }}
-                  >
-                    Discord: raulmobile123
-                  </button>
-                  {showTooltip && (
-                    <div 
-                      className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-sm px-3 py-1 rounded"
-                      style={{ whiteSpace: 'nowrap' }}
-                    >
-                      {tooltipText}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Projects */}
-              <div className="max-w-4xl mx-auto space-y-8 mb-12">
-                {projects.map((project, index) => (
-                  <div 
-                    key={index}
-                    className="rounded-2xl shadow-2xl overflow-hidden hover:shadow-red-500/20 transition-all border-2 border-slate-700/30"
-                    style={{ 
-                      marginLeft: index % 2 === 0 ? '0' : '40px',
-                      marginRight: index % 2 === 0 ? '40px' : '0',
-                      background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)'
-                    }}
-                  >
-                    {/* Video */}
-                    <div className="aspect-video w-full bg-black">
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src={`https://www.youtube.com/embed/${project.youtubeId}`}
-                        title={project.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                    
-                    {/* Info */}
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-3 text-red-300">{project.title}</h3>
-                      <p className="text-slate-400 leading-relaxed">{project.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Skills */}
-              <div className="max-w-4xl mx-auto rounded-2xl shadow-2xl p-8 mb-8 border-2 border-slate-700/30" style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)' }}>
-                <h3 className="text-2xl font-bold mb-6 text-red-400">I can do anything, from</h3>
-                <div className="flex flex-wrap gap-3">
-                  {['DataStores', 'Gun Systems', 'Inventory Systems', 'RPG Systems', 'Full Games', 'Quest Systems', 'Advanced NPCs', 'Boss Systems'].map((skill, index) => (
-                    <span 
-                      key={index}
-                      className="rounded-lg px-4 py-2 text-sm font-semibold cursor-pointer text-red-200 border-2 border-red-800/40"
-                      style={{ 
-                        display: 'inline-block', 
-                        transition: 'all 0.2s',
-                        background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%)'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = 'scale(1.05)';
-                        e.currentTarget.style.background = 'linear-gradient(135deg, #991b1b 0%, #dc2626 100%)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = 'scale(1)';
-                        e.currentTarget.style.background = 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%)';
-                      }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-xl font-bold text-red-300 mt-6" style={{ textShadow: '0 0 10px rgba(252, 165, 165, 0.5), 0 0 2px rgba(220, 38, 38, 0.8)' }}>Bring your ideas to life!</p>
-              </div>
-
-              {/* Footer */}
-              <footer className="max-w-4xl mx-auto mt-12 pt-6">
-              </footer>
-
-            </div>
-          );
+    const projects = [
+        {
+            title: 'Parkour System',
+            description: 'Advanced parkour movement with wall running, dashing, vaulting, and momentum-based control.',
+            youtubeId: '1xYzZ4vWkyg'
+        },
+        {
+            title: 'Battlegrounds System',
+            description: 'Full combat framework with M1 combos, abilities, counters, blocking, and multiple characters.',
+            youtubeId: 'OiZC_5G4N2Q'
+        },
+        {
+            title: 'Gun System',
+            description: 'Raycast gun system featuring killstreaks, ammo stations, and responsive hit detection.',
+            youtubeId: '_hSuTYw2sKo'
         }
+    ];
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<RobloxPortfolio />);
-    </script>
+    return (
+        <div className="min-h-screen p-6">
+
+            {/* Header */}
+            <header
+                className="max-w-4xl mx-auto mb-10 p-8 rounded-2xl shadow-2xl border border-red-900/50"
+                style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #dc2626 100%)' }}
+            >
+                <h1 className="text-5xl font-bold text-red-100 mb-2">Scripter</h1>
+                <p className="text-xl text-red-200/80">3 years of experience</p>
+            </header>
+
+            {/* Contact */}
+            <div
+                className="max-w-4xl mx-auto mb-10 p-8 rounded-2xl shadow-2xl border border-red-900/30"
+                style={{ background: 'linear-gradient(135deg, #1a0b0b 0%, #2a0f0f 100%)' }}
+            >
+                <h3 className="text-2xl font-bold mb-4 text-red-400">CONTACT</h3>
+
+                <div className="relative inline-block">
+                    <button
+                        onClick={copyDiscord}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                        className="px-6 py-3 text-lg font-semibold rounded-lg text-red-100 border border-red-700/50 transition-all"
+                        style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%)' }}
+                    >
+                        Discord: raulmobile123
+                    </button>
+
+                    {showTooltip && (
+                        <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-black text-red-100 text-sm px-3 py-1 rounded">
+                            {tooltipText}
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Projects */}
+            <div className="max-w-4xl mx-auto space-y-10 mb-16">
+                {projects.map((project, index) => (
+                    <div
+                        key={index}
+                        className="rounded-2xl overflow-hidden shadow-2xl border border-red-900/30 transition-all hover:shadow-red-500/20"
+                        style={{
+                            marginLeft: index % 2 === 0 ? '0' : '40px',
+                            marginRight: index % 2 === 0 ? '40px' : '0',
+                            background: 'linear-gradient(135deg, #1a0b0b 0%, #2a0f0f 100%)'
+                        }}
+                    >
+                        <div className="aspect-video bg-black">
+                            <iframe
+                                width="100%"
+                                height="100%"
+                                src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                                title={project.title}
+                                frameBorder="0"
+                                allowFullScreen
+                            />
+                        </div>
+
+                        <div className="p-6">
+                            <h3 className="text-2xl font-bold text-red-300 mb-3">
+                                {project.title}
+                            </h3>
+                            <p className="text-red-200/70 leading-relaxed">
+                                {project.description}
+                            </p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+        </div>
+    );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<RobloxPortfolio />);
+</script>
 </body>
 </html>
