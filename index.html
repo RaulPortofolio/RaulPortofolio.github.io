@@ -20,13 +20,13 @@
             background: linear-gradient(
                 135deg,
                 #020617 0%,
-                #160a0a 40%,
-                #2a0f0f 50%,
-                #160a0a 60%,
+                #0b0f1a 35%,
+                #140909 50%,
+                #0b0f1a 65%,
                 #020617 100%
             );
             background-size: 300% 300%;
-            animation: gradientShift 18s ease infinite;
+            animation: gradientShift 20s ease infinite;
         }
 
         @keyframes gradientShift {
@@ -36,7 +36,7 @@
         }
 
         h1, h2, h3, p, span {
-            -webkit-text-stroke: 0.4px rgba(0, 0, 0, 0.4);
+            -webkit-text-stroke: 0.35px rgba(0, 0, 0, 0.35);
         }
     </style>
 </head>
@@ -74,7 +74,7 @@ function RobloxPortfolio() {
         },
         {
             title: 'RPG System',
-            description: 'RPG system with leveling, sword-based combat mechanics, and an enemy NPC',
+            description: 'RPG system with leveling, sword-based combat mechanics, and an enemy NPC.',
             youtubeId: 'aqNXhO2-mnM'
         }
     ];
@@ -84,27 +84,33 @@ function RobloxPortfolio() {
 
             {/* Header */}
             <header
-                className="max-w-4xl mx-auto mb-10 p-8 rounded-2xl shadow-2xl border border-red-900/50"
-                style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #dc2626 100%)' }}
+                className="max-w-4xl mx-auto mb-10 p-8 rounded-2xl shadow-2xl border border-red-500/20"
+                style={{ background: 'linear-gradient(135deg, #1f2933 0%, #3f1d1d 100%)' }}
             >
-                <h1 className="text-5xl font-bold text-red-100 mb-2">Scripter</h1>
-                <p className="text-xl text-red-200/80">3 years of experience</p>
+                <h1 className="text-5xl font-bold text-red-200 mb-2">
+                    Scripter
+                </h1>
+                <p className="text-xl text-red-300/70">
+                    3 years of experience
+                </p>
             </header>
 
             {/* Contact */}
             <div
-                className="max-w-4xl mx-auto mb-10 p-8 rounded-2xl shadow-2xl border border-red-900/30"
-                style={{ background: 'linear-gradient(135deg, #1a0b0b 0%, #2a0f0f 100%)' }}
+                className="max-w-4xl mx-auto mb-10 p-8 rounded-2xl shadow-2xl border border-red-500/20"
+                style={{ background: 'linear-gradient(135deg, #0b1220 0%, #111827 100%)' }}
             >
-                <h3 className="text-2xl font-bold mb-4 text-red-400">CONTACT</h3>
+                <h3 className="text-2xl font-bold mb-4 text-red-400">
+                    CONTACT
+                </h3>
 
                 <div className="relative inline-block">
                     <button
                         onClick={copyDiscord}
                         onMouseEnter={() => setShowTooltip(true)}
                         onMouseLeave={() => setShowTooltip(false)}
-                        className="px-6 py-3 text-lg font-semibold rounded-lg text-red-100 border border-red-700/50 transition-all"
-                        style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%)' }}
+                        className="px-6 py-3 text-lg font-semibold rounded-lg text-red-100 border border-red-600/40 transition-all hover:shadow-lg hover:shadow-red-500/20"
+                        style={{ background: 'linear-gradient(135deg, #7f1d1d 0%, #b91c1c 100%)' }}
                     >
                         Discord: raulmobile123
                     </button>
@@ -122,11 +128,11 @@ function RobloxPortfolio() {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="rounded-2xl overflow-hidden shadow-2xl border border-red-900/30 transition-all hover:shadow-red-500/20"
+                        className="rounded-2xl overflow-hidden shadow-2xl border border-red-500/20 transition-all hover:shadow-red-500/10"
                         style={{
                             marginLeft: index % 2 === 0 ? '0' : '40px',
                             marginRight: index % 2 === 0 ? '40px' : '0',
-                            background: 'linear-gradient(135deg, #1a0b0b 0%, #2a0f0f 100%)'
+                            background: 'linear-gradient(135deg, #0b1220 0%, #111827 100%)'
                         }}
                     >
                         <div className="aspect-video bg-black">
@@ -136,15 +142,16 @@ function RobloxPortfolio() {
                                 src={`https://www.youtube.com/embed/${project.youtubeId}`}
                                 title={project.title}
                                 frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowFullScreen
                             />
                         </div>
 
                         <div className="p-6">
-                            <h3 className="text-2xl font-bold text-red-300 mb-3">
+                            <h3 className="text-2xl font-bold text-red-200 mb-3">
                                 {project.title}
                             </h3>
-                            <p className="text-red-200/70 leading-relaxed">
+                            <p className="text-slate-300 leading-relaxed">
                                 {project.description}
                             </p>
                         </div>
@@ -161,4 +168,3 @@ root.render(<RobloxPortfolio />);
 </script>
 </body>
 </html>
-
